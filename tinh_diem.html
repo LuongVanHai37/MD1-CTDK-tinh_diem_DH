@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính điểm ĐH khối D</h1>
+    <span>Môn Toán</span>
+    &nbsp;<input type="number" id="diemtoan"><br><br>
+
+    <span>Môn Văn</span>
+    &nbsp;&nbsp;<input type="number"  id="diemvan"><br><br>
+
+    <span>Môn Anh</span>
+    &nbsp;&nbsp;<input type="number" id="diemanh"><br><br>
+    <span>Khu vực</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<select id="area">
+    <option value="KV1">KV1</option>
+    <option value="KV2-NT">KV2-NT</option>
+    <option value="KV2">KV2</option>
+    <option value="KV3">KV3</option>
+    </select><br><br>
+<button onclick="tinhDiem();">Tính điểm</button>
+</body>
+<script>
+
+    function tinhDiem(){
+        let diem_toan = +(document.getElementById("diemtoan").value);
+        let diem_van = +(document.getElementById("diemvan").value);
+        let diem_anh = +(document.getElementById("diemanh").value);
+        let tong_diem = diem_toan + diem_van + diem_anh;
+        let area = document.getElementById("area").value;
+        let kv1  = tong_diem + 0.75;
+        let kv2_nt = tong_diem + 0.5;
+        let kv2 = tong_diem +0.25;
+        switch (area){
+            case "KV1":
+                document.write("Tổng điểm ĐH khối D là ",kv1)
+                break;
+            case "KV2-NT":
+                document.write("Tổng điểm ĐH khối D là ",kv2_nt)
+                break;
+            case "KV2":
+                document.write("Tổng điểm ĐH khối D là ",kv2)
+                break;
+            case "KV3":
+                document.write("Tổng điểm ĐH khối D  là ",tong_diem)
+                break;
+        }
+    }
+</script>
+</html>
